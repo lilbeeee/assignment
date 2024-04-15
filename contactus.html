@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            background-color: #c74b4b;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 2px dashed black;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0px 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"],
+        button {
+            background-color: rgb(185, 144, 238);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+           
+  text-transform: uppercase;
+  &:after {
+    content: ' >';
+  }
+}
+        
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: rgb(185, 144, 238);
+        }
+
+        @keyframes s1 {
+            from {
+                transform: translateX(30%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+            5% {
+                background-color: rgb(170, 255, 0);
+            }
+            25% {
+                background-color: rgb(185, 144, 238);
+            }
+        }
+
+        header {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            animation-name: s1;
+            animation: s1 3s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>Contact Us Here</header>
+    <form onsubmit="return validateForm()" action="https://formspree.io/f/mqkrgave"
+    method="POST">
+        <fieldset>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your First Name" required><br><br>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your Last Name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required><br><br>
+            <label for="dob">Date Of Birth:</label>
+            <input type="text" id="dob" name="dob" placeholder="DD/MM/YY"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea><br><br>
+            <button type="submit">Submit Button</button>
+        </fieldset>
+    </form>
+    
+    <script>
+        function validateForm() {
+            let firstName = document.getElementById('first-name').value;
+            let lastName = document.getElementById('last-name').value;
+            let email = document.getElementById('email').value;
+            let dob = document.getElementById('dob').value;
+            let phone = document.getElementById('phone').value;
+            let message = document.getElementById('message').value;
+            
+            let datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+            let emailPattern = /\S+@\S+\.\S+/; 
+
+            if (firstName.length < 5) {
+                alert("First name should be at least 5 characters.");
+                return false;
+            }
+            if (lastName.length < 5) {
+                alert("Last name should be at least 5 characters.");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Email should contain a domain name with '@'.");
+                return false;
+            }
+            if (!datePattern.test(dob)) {
+                alert("Date must be in dd/mm/yy format.");
+                return false;
+            }
+            if (phone.length != 10) {
+                alert("Phone must contain 10 digits.");
+                return false;
+            }
+            if (message.replace(/ /g,'').length < 50) { // Regex to remove spaces for alphabet count
+                alert("Message must be of at least 50 alphabets.");
+                return false;
+            }
+
+            // If all validations pass
+            return true;
+        }
+    </script>
+</body>
+</html>

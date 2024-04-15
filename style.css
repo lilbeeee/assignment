@@ -1,0 +1,165 @@
+@charset "UTF-8";
+.navbar a {
+  float: none;
+  font-size: 25px;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: white;
+}
+
+body, html {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+body {
+  margin: 0px 40px 0px;
+}
+
+.header {
+  background-color: white;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #1780e9; /* Blue color */
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.84);
+  width: 100%;
+  margin-top: 7%;
+  margin-bottom:  40;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: Arial;
+}
+
+.dropdown {
+  float: none;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: rgb(186, 149, 149);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0px 590px 0px 590px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ff0000;
+  max-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 40px;
+  text-align: center;
+  margin: 0px 0px 0px 250px;
+  padding: 25px 20px 10px 20px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: inline;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #fd0000;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: inline;
+}
+
+.bar {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.parallax {
+  background-image: url(70476928-Underwater-View-Of-Mature-Sockeye-Salmon-On-The-Spawning-Ground-In-Power-Creek-Copper-River-Delta-Near-Cordova.jpg);
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 95%;
+}
+
+.overlay {
+  text-align: center;
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p {
+  text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.box {
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+  text-align: justify;
+  margin-left: 20px;
+  outline: 0.0001px solid gainsboro;
+}
+
+.end {
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.84);
+  width: 100%;
+  margin-top: 7%;
+  margin-bottom: 40%;
+}
+
+.contact {
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  float: inline-end;
+  margin-top: 5%;
+  margin-right: 3%;
+}
+
+.navbar.fixed-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* CSS for slideshow */
+.gallery img {
+  display: none; /* Hide all images initially */
+  max-width: 100%;
+  height: auto;
+}/*# sourceMappingURL=style.css.map */
